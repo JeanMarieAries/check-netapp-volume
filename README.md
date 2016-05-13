@@ -34,7 +34,9 @@ Calculation and report are made by the script.
 
 ###Todo before use
 
-###On the Netapp host
+
+
+####On the Netapp host
 
 We need a SSH account to connect to the filer, with minimal privileges (for security reason).
 This can be done by create a Netapp role (associated with the 'df' command), a group and a user.
@@ -48,7 +50,7 @@ This can be done by create a Netapp role (associated with the 'df' command), a g
     
     
     
-###On the Nagios host
+####On the Nagios host
 
 check-netapp-volume is a python script that use a very limited number of modules.
 Before running the script, you have to install the 'fabric' module, with pip :
@@ -57,7 +59,7 @@ Before running the script, you have to install the 'fabric' module, with pip :
   
   
   
-###On the script header (optional)
+####On the script header (optional)
 
 there is a couple of variable that you can define (local directory use to store the SSH stdout, and the file name) 
 
