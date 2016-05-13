@@ -1,5 +1,5 @@
 # check-netapp-volume
-Nagios plugin for Netapp volume check
+##Nagios plugin for Netapp volume check
 
 
 
@@ -24,7 +24,7 @@ It use SSH connection to connect to the filer, get the entire volumes list, pars
     
     
 
-**Why using SSH instead of SNMP ?**
+###Why using SSH instead of SNMP ?
 
 When Netapp filer is in heavily load, browsing MIB from snmp client does not work very well, because we need to make many request to the filer to get the stats.
 With SSH, we only need one connection, and one remote command execution to get the volume list. (vol size, usage)
@@ -32,9 +32,9 @@ Calculation and report are made by the script.
 
 
 
-**Todo before use**
+###Todo before use
 
-***On the Netapp host***
+###On the Netapp host
 
 We need a SSH account to connect to the filer, with minimal privileges (for security reason).
 This can be done by create a Netapp role (associated with the 'df' command), a group and a user.
@@ -48,7 +48,7 @@ This can be done by create a Netapp role (associated with the 'df' command), a g
     
     
     
-***On the Nagios host***
+###On the Nagios host
 
 check-netapp-volume is a python script that use a very limited number of modules.
 Before running the script, you have to install the 'fabric' module, with pip :
@@ -57,7 +57,7 @@ Before running the script, you have to install the 'fabric' module, with pip :
   
   
   
-***On the script header (optional)***
+###On the script header (optional)
 
 there is a couple of variable that you can define (local directory use to store the SSH stdout, and the file name) 
 
