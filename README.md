@@ -5,8 +5,9 @@ check-netapp-volume is a python/nagios plugin that allow you to check volume spa
 It use SSH connection to connect to the filer, get the entire volumes list, parse and output the result.
 
     Example of run : 
-    check_netapp_volume -H BIGFiler -W 85 -C 95 -U supervisor -P superpassword
+    check_netapp_volume -H BIGFiler -U supervision -P superpassword -I vol1,vol3 -W 70 -C 95
 
+'-I' allow you to ignore volume from the check (vol name or partial vol name not regexp)
 
 **Why using SSH instead of SNMP ?**
 
