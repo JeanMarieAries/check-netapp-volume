@@ -14,10 +14,10 @@ It use SSH connection to connect to the filer, get the entire volumes list, pars
 '-I' allow you to ignore volume from the check (vol name or partial vol name not regexp)
 
     Example :
-        If you want to exclude a volume named 'DataDBOracle'
-        you can use 
+        If you want to exclude a volume named 'DataDBOracle', you can use 
+        
             -I Data
-        or
+            or
             -I DBOra
     
     -I is case sensitive.
