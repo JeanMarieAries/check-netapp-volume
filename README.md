@@ -27,6 +27,7 @@ It use SSH connection to connect to the filer, get the entire volumes list, pars
 ###Why using SSH instead of SNMP ?
 
 When Netapp filer is in heavily load, browsing MIB from snmp client does not work very well, because we need to make many request to the filer to get the stats. The plugin will report UNKNOWN state, because of timed out.
+
 With SSH, we only need one connection, and one remote command execution to get the volume list. (vol size, usage)
 Calculation and report are made by the script. 
 
