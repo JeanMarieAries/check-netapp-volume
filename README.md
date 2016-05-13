@@ -8,17 +8,17 @@ It use SSH connection to connect to the filer, get the entire volumes list, pars
 
 
     Example of run : 
-    check_netapp_volume -H BIGFiler -U supervision -P superpassword -I vol1,vol3 -W 70 -C 95
+        check_netapp_volume -H BIGFiler -U supervision -P superpassword -I vol1,vol3 -W 70 -C 95
 
 
 '-I' allow you to ignore volume from the check (vol name or partial vol name not regexp)
 
     Example :
-    If you want to exclude a volume named 'DataDBOracle'
-    you can use 
-    -I Data
-    or
-    -I DBOra
+        If you want to exclude a volume named 'DataDBOracle'
+        you can use 
+            -I Data
+        or
+            -I DBOra
     
     -I is case sensitive.
     
@@ -32,7 +32,7 @@ Calculation and report are made by the script.
 
 
 
-###Todo before use
+##Todo before use
 
 
 
@@ -42,10 +42,11 @@ We need a SSH account to connect to the filer, with minimal privileges (for secu
 This can be done by create a Netapp role (associated with the 'df' command), a group and a user.
 
     Example :
-    filer# useradmin role add only_ssh -a login-ssh
-    filer# useradmin role add df_command -a cli-df*
-    filer# useradmin group add ssh_supervision -r only_ssh,df_command
-    filer# useradmin user add supervision -g ssh_supervision
+        filer# useradmin role add only_ssh -a login-ssh
+        filer# useradmin role add df_command -a cli-df*
+        filer# useradmin group add ssh_supervision -r only_ssh,df_command
+        filer# useradmin user add supervision -g ssh_supervision
+        
     now you can use 'supervision' as the SSH user.
     
     
@@ -63,4 +64,4 @@ Before running the script, you have to install the 'fabric' module, with pip :
 
 there is a couple of variable that you can define (local directory use to store the SSH stdout, and the file name) 
 
-see the help for more details
+see the help script for more details
