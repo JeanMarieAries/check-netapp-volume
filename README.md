@@ -32,6 +32,7 @@ This could be accomplish by create a Netapp role (associated with the 'df' comma
     
     
 *On the Nagios host*
+
 check-netapp-volume is a python script that use a very limited of modules.
 Before running the script, you have to install the fabric module, with pip :
 
@@ -39,4 +40,7 @@ Before running the script, you have to install the fabric module, with pip :
   
   
 *On the script header (optional)*
+
 there is a couple of variable that you can define (local directory use to store the SSH stdout, and the file name) 
+
+see the help for more details
