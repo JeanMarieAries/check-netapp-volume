@@ -7,7 +7,9 @@ It use SSH connection to connect to the filer, get the entire volumes list, pars
     Example of run : 
     check_netapp_volume -H BIGFiler -W 85 -C 95 -U supervisor -P superpassword
 
+
 Why using SSH instead of SNMP ?
+
 When Netapp filer is in a heavily load, browsing MIB from snmp client does not work very well, because we need to make many request to the filer to get the stats.
 With SSH, we only need one connection, and one remote command execution to get the volume list. (vol size, usage)
 Calculation and report are made by the script. 
@@ -26,11 +28,14 @@ This could be accomplish by create a Netapp role (associated with the 'df' comma
     filer# useradmin user add supervision -g ssh_supervision
     now you can use 'supervision' as the SSH user.
     
+    
+    
 On the Nagios host
 check-netapp-volume is a python script that use a very limited of modules.
 Before running the script, you have to install the fabric module, with pip :
 
     pip install fabric
+  
   
 On the script header (optional)
 there is a couple of variable that you can define (local directory use to store the SSH stdout, and the file name) 
