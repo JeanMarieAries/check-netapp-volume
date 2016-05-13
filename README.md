@@ -40,7 +40,7 @@ Calculation and report are made by the script.
 #####On the Netapp host
 
 We need a SSH account to connect to the filer, with minimal privileges (for security reason).
-This can be done by create a Netapp role (associated with the 'df' command), a group and a user.
+This can be done by creating a Netapp role (associated with the 'df' command), a group and a user.
 
     Example :
         filer# useradmin role add only_ssh -a login-ssh
