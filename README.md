@@ -4,8 +4,10 @@ Nagios plugin for Netapp volume check
 check-netapp-volume is a python/nagios plugin that allow you to check volume space, according thresholds defined.
 It use SSH connection to connect to the filer, get the entire volumes list, parse and output the result.
 
+
     Example of run : 
     check_netapp_volume -H BIGFiler -U supervision -P superpassword -I vol1,vol3 -W 70 -C 95
+
 
 '-I' allow you to ignore volume from the check (vol name or partial vol name not regexp)
 
@@ -18,6 +20,7 @@ It use SSH connection to connect to the filer, get the entire volumes list, pars
     
     -I is case sensitive.
     
+    
 
 **Why using SSH instead of SNMP ?**
 
@@ -26,9 +29,10 @@ With SSH, we only need one connection, and one remote command execution to get t
 Calculation and report are made by the script. 
 
 
+
 **Todo before use**
 
-*On the Netapp host*
+***On the Netapp host***
 
 We need a SSH account to connect to the filer, with minimal privileges (for security reason).
 This can be done by create a Netapp role (associated with the 'df' command), a group and a user.
@@ -50,7 +54,8 @@ Before running the script, you have to install the 'fabric' module, with pip :
     pip install fabric
   
   
-*On the script header (optional)*
+  
+***On the script header (optional)***
 
 there is a couple of variable that you can define (local directory use to store the SSH stdout, and the file name) 
 
