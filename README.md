@@ -9,6 +9,15 @@ It use SSH connection to connect to the filer, get the entire volumes list, pars
 
 '-I' allow you to ignore volume from the check (vol name or partial vol name not regexp)
 
+    Example :
+    If you want to exclude a volume named 'DataDBOracle'
+    you can use 
+    -I Data
+    or
+    -I DBOra
+    
+    
+
 **Why using SSH instead of SNMP ?**
 
 When Netapp filer is in a heavily load, browsing MIB from snmp client does not work very well, because we need to make many request to the filer to get the stats.
