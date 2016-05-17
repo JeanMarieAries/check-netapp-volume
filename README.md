@@ -8,7 +8,7 @@ It use SSH connection to connect to the filer, get the entire volumes list, pars
 
 
     Example of run : 
-        check_netapp_volume -H BIGFiler -U supervision -P superpassword -I vol1,vol3 -W 70 -C 95
+        check_netapp-2.7.py -H BIGFiler -U supervision -P superpassword -I vol1,vol3 -W 70 -C 95
 
 
 '-I' allow you to ignore volume from the check (vol name or partial vol name not regexp)
