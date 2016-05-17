@@ -59,7 +59,8 @@ Before running the script, you have to install the 'fabric' module, with pip :
 
     pip install fabric
   
-  
+If you use python version before 2.7.9, you must install pip manually :
+    https://pip.pypa.io/en/stable/installing/
   
 #####On the script header (optional)
 
