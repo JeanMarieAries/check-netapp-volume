@@ -70,7 +70,7 @@ there is a couple of variable that you can define (local directory use to store 
 
 see the help script for more details
 
-
+<br><br>
 
 #####Network issue
 Ensure that firewall and other network security tools are opened between Nagios host and Filers
