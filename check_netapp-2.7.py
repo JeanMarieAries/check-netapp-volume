@@ -41,6 +41,7 @@ filedir = '/tmp/'
 outputfile = 'df-output'
 warnlist = []
 critlist = []
+#snapshots spaces excluded from the output
 exclude = ['snap reserve', '.snapshot']
 
 # Functions
@@ -56,9 +57,9 @@ def findscorebyvolume(l):
         print 'error in ', l
         sys.exit(3)
 
-
+#################################################################
 # START :)
-
+#################################################################
 # define arguments parser & help
 parser = argparse.ArgumentParser(prog='check_netapp_volume', formatter_class=argparse.RawDescriptionHelpFormatter,
                                  description='''check_netapp_volume is a python/nagios plugin that allow you to check volume space, according thresholds defined.
@@ -92,7 +93,7 @@ with open(filedir + outputfile, 'r') as f:
             number += 1  # Ignore the first line of the file
         else:
             if args.ignorelist:
-                ignorestrings = args.ignorelist.split(',')
+                ignorestrings = args.ignorelist.split(',')+exclude
                 found = False
                 for pattern in ignorestrings:
                     if pattern in line:
