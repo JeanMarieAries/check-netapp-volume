@@ -51,7 +51,7 @@ This can be done by creating a Netapp role (associated with the 'df' command), a
     now you can use 'supervision' as the SSH user.
     
     
-    
+<br>
 #####On the Nagios host
 
 check-netapp-volume is a python script that use a very limited number of modules.
@@ -63,14 +63,14 @@ If you use python version before 2.7.9, you must install pip manually :
     https://pip.pypa.io/en/stable/installing/
   
   
-  
+<br>  
 #####On the script header (optional)
 
 there is a couple of variable that you can define (local directory use to store the SSH stdout, and the file name) 
 
 see the help script for more details
 
-<br><br>
+<br>
 
 #####Network issue
 Ensure that firewall and other network security tools are opened between Nagios host and Filers
