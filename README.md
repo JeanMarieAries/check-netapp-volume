@@ -5,9 +5,9 @@
 
 check-netapp-volume is a python2.7/nagios plugin that allow you to check volume space, according thresholds defined.
 It use SSH connection to connect to the filer, get the entire volumes list, parse and output the result.
-<br>
+<br><br>
 Plugin exclude snap reserve from the output.
-
+<br><br>
 
     Example of run : 
         check_netapp-2.7.py -H BIGFiler -U supervision -P superpassword -I vol1,vol3 -W 70 -C 95
