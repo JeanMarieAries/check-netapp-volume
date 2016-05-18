@@ -24,7 +24,7 @@ CHECK_NETAPP_VOLUME
 _author_ = 'Jean Marie ARIES'
 __copyright__ = "Copyright 2016, Jean Marie ARIES"
 __license__ = "MIT"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __maintainer__ = "Jean Marie ARIES"
 __email__ = "jm.aries@wanadoo.fr"
 __status__ = "Production"
@@ -41,7 +41,7 @@ filedir = '/tmp/'
 outputfile = 'df-output'
 warnlist = []
 critlist = []
-
+exclude = ['snap reserve', '.snapshot']
 
 # Functions
 def findscorebyvolume(l):
@@ -102,7 +102,9 @@ with open(filedir + outputfile, 'r') as f:
                     findscorebyvolume(' '.join(line.split()))
                     number += 1
             else:
-                print ' '.join(line.split())
+                if any(x in line for x in exclude) or '%' not in line:
+                    continue
+                findscorebyvolume(' '.join(line.split()))
                 number += 1
 
 # Delete temp file
