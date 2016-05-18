@@ -62,11 +62,15 @@ Before running the script, you have to install the 'fabric' module, with pip :
 If you use python version before 2.7.9, you must install pip manually :
     https://pip.pypa.io/en/stable/installing/
   
+  
+  
 #####On the script header (optional)
 
 there is a couple of variable that you can define (local directory use to store the SSH stdout, and the file name) 
 
 see the help script for more details
+
+
 
 #####Network issue
 Ensure that firewall and other network security tools are opened between Nagios host and Filers
