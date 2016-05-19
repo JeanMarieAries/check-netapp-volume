@@ -41,6 +41,7 @@ filedir = '/tmp/'
 outputfile = 'df-output'
 warnlist = []
 critlist = []
+
 #snapshots spaces excluded from the output
 exclude = ['snap reserve', '.snapshot']
 
