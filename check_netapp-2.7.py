@@ -58,6 +58,7 @@ def findscorebyvolume(l):
         print 'error in ', l
         sys.exit(3)
 
+
 def runcommand():
     # SSH Connection and save stdout
     env.host_string = args.hostname
@@ -118,7 +119,7 @@ with open(filedir + outputfile, 'r') as f:
                 number += 1
 
 # Delete temp file
-#os.remove(filedir + outputfile)
+os.remove(filedir + outputfile)
 
 # Report execution
 if critlist:
