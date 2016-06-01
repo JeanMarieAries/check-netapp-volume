@@ -58,6 +58,16 @@ def findscorebyvolume(l):
         print 'error in ', l
         sys.exit(3)
 
+def runcommand():
+    # SSH Connection and save stdout
+    env.host_string = args.hostname
+    env.user = args.username
+    env.password = args.password
+    fileout = open(filedir + outputfile, 'w')
+    with hide('running'):
+        run('df -h', pty=False, shell=False, stdout=fileout)
+
+
 #################################################################
 # START :)
 #################################################################
@@ -79,12 +89,10 @@ parser.add_argument('-I', dest='ignorelist', help='Ignore volume(s) matching pat
                     metavar='Volume(s) name(s) to ignore, separated by comma')
 args = parser.parse_args()
 
+
 # SSH Connection and save stdout
-env.host_string = args.hostname
-env.user = args.username
-env.password = args.password
-fileout = open(filedir + outputfile, 'w')
-output = run('df -h', shell=False, stdout=fileout)
+
+runcommand()
 
 # File processing, depend on args
 number = 0
@@ -110,7 +118,7 @@ with open(filedir + outputfile, 'r') as f:
                 number += 1
 
 # Delete temp file
-os.remove(filedir + outputfile)
+#os.remove(filedir + outputfile)
 
 # Report execution
 if critlist:
