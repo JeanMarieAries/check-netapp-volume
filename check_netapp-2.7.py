@@ -34,11 +34,12 @@ import argparse
 from fabric.api import *
 import sys
 import os
+import time
 
 # Vars
 #   replace the two following if necessary
 filedir = '/tmp/'
-outputfile = 'df-output'
+outputfile = "df-output-" + +time.strftime("%Y%m%d-%H%M%S")
 warnlist = []
 critlist = []
 
